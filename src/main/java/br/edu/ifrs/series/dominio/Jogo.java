@@ -63,6 +63,10 @@ public class Jogo {
 		this.plataforma = plataforma;
 	}
 
+	public String getDescricao() {
+		return nome + " (" + anoLancamento + ")" + " - " + desenvolvedora;
+	}
+
 	@Override
 	public String toString() {
 		return "Jogo [id=" + id + ", nome=" + nome + ", desenvolvedora=" + desenvolvedora + ", anoLancamento="

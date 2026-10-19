@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series | Novo jogo</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+
+    <main class="container">
+
+        <h1>Novo jogo</h1>
+        <p>Preencha os dados para adicionar um jogo à coleção.</p>
+
+        <form method="post"
+              th:action="@{/paginas/jogos/novo}"
+              th:object="${jogo}">
+
+            <label for="nome">Nome do jogo</label>
+            <input type="text"
+                   id="nome"
+                   th:field="*{nome}"
+                   placeholder="Ex.: The Witcher 3"
+                   required>
+
+            <label for="desenvolvedora">Desenvolvedora</label>
+            <input type="text"
+                   id="desenvolvedora"
+                   th:field="*{desenvolvedora}"
+                   placeholder="Ex.: CD Projekt Red"
+                   required>
+
+            <label for="anoLancamento">Ano de lançamento</label>
+            <input type="number"
+                   id="anoLancamento"
+                   th:field="*{anoLancamento}"
+                   placeholder="Ex.: 2015"
+                   min="1950"
+                   max="2100"
+                   required>
+
+            <label for="plataforma">Plataforma</label>
+            <input type="text"
+                   id="plataforma"
+                   th:field="*{plataforma}"
+                   placeholder="Ex.: PC, PlayStation 5, Xbox"
+                   required>
+
+            <div class="acoes">
+                <button type="submit" class="botao">
+                    Cadastrar jogo
+                </button>
+
+                <a th:href="@{/paginas/jogos}"
+                   class="botao botao-secundario">
+                    Cancelar
+                </a>
+            </div>
+
+        </form>
+
+    </main>
+
+</body>
+</html>

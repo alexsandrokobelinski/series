@@ -1,0 +1,398 @@
+/* =========================================================
+   SERIES | Identidade visual do projeto
+   Paleta: azul-marinho, violeta e azul-claro
+   ========================================================= */
+
+:root {
+    --cor-fundo: #0b1020;
+    --cor-superficie: #151d32;
+    --cor-superficie-hover: #1d2942;
+    --cor-primaria: #8b5cf6;
+    --cor-primaria-hover: #7c3aed;
+    --cor-destaque: #38bdf8;
+    --cor-texto: #f1f5f9;
+    --cor-texto-secundario: #a7b4ca;
+    --cor-borda: #2b3852;
+    --cor-sucesso: #34d399;
+    --cor-erro: #fb7185;
+    --raio: 14px;
+    --sombra: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Configuração geral ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px 20px;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background:
+        radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.13), transparent 40%),
+        radial-gradient(ellipse at bottom right, rgba(56, 189, 248, 0.08), transparent 35%),
+        var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* ---------- Links ---------- */
+
+a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+}
+
+/* ---------- Área principal ---------- */
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 24px auto;
+    padding: 32px;
+    background: rgba(21, 29, 50, 0.94);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+/* ---------- Títulos ---------- */
+
+h1,
+h2,
+h3 {
+    color: var(--cor-texto);
+    line-height: 1.25;
+}
+
+h1 {
+    margin: 0 0 12px;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 750;
+    letter-spacing: -0.04em;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 4px;
+    margin-top: 14px;
+    border-radius: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--cor-primaria),
+        var(--cor-destaque)
+    );
+}
+
+h2 {
+    margin-top: 28px;
+    font-size: 1.45rem;
+}
+
+p {
+    color: var(--cor-texto-secundario);
+}
+
+/* ---------- Formulários ---------- */
+
+form {
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    color: var(--cor-texto);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: 11px 13px;
+    color: var(--cor-texto);
+    background: #0d1528;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font: inherit;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #71809a;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #52617d;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18);
+    background: #101a30;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display: inline-block;
+    width: auto;
+    min-height: auto;
+    accent-color: var(--cor-primaria);
+}
+
+/* ---------- Botões ---------- */
+
+button,
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 42px;
+    margin-top: 18px;
+    padding: 10px 18px;
+    color: #fff;
+    background: linear-gradient(
+        135deg,
+        var(--cor-primaria),
+        var(--cor-primaria-hover)
+    );
+    border: 1px solid transparent;
+    border-radius: 9px;
+    font: inherit;
+    font-weight: 650;
+    text-align: center;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+button:hover,
+.botao:hover {
+    color: #fff;
+    text-decoration: none;
+    filter: brightness(1.12);
+    box-shadow: 0 7px 20px rgba(124, 58, 237, 0.25);
+    transform: translateY(-1px);
+}
+
+button:active,
+.botao:active {
+    transform: translateY(0);
+}
+
+.botao-secundario {
+    color: var(--cor-texto);
+    background: var(--cor-superficie-hover);
+    border-color: var(--cor-borda);
+}
+
+.botao-secundario:hover {
+    color: #fff;
+    background: #293754;
+}
+
+/* ---------- Tabelas ---------- */
+
+table {
+    width: 100%;
+    margin-top: 24px;
+    overflow: hidden;
+    border: 1px solid var(--cor-borda);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    background: #10182b;
+}
+
+thead {
+    background: #202b45;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--cor-borda);
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    color: #dbeafe;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+td {
+    color: var(--cor-texto-secundario);
+}
+
+tbody tr {
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+    background: var(--cor-superficie-hover);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ---------- Organização de ações e mensagens ---------- */
+
+.acoes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.mensagem {
+    margin-top: 18px;
+    padding: 12px 16px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 9px;
+    background: var(--cor-superficie-hover);
+}
+
+.sucesso {
+    color: var(--cor-sucesso);
+}
+
+.erro {
+    color: var(--cor-erro);
+}
+
+.texto-secundario {
+    color: var(--cor-texto-secundario);
+}
+
+/* ---------- Responsividade ---------- */
+
+@media (max-width: 640px) {
+    body {
+        padding: 16px 10px;
+    }
+
+    .container {
+        margin: 8px auto;
+        padding: 20px 16px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th,
+    td {
+        padding: 11px 12px;
+    }
+
+    button,
+    .botao {
+        max-width: 100%;
+    }
+}
+
+/* ---------- Acessibilidade ---------- */
+
+:focus-visible {
+    outline: 2px solid var(--cor-destaque);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* ---------- Cabeçalho das páginas ---------- */
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.cabecalho h1 {
+    margin-bottom: 8px;
+}
+
+.cabecalho p {
+    margin: 0;
+}
+
+.cabecalho .botao {
+    margin-top: 0;
+}
+
+/* ---------- Navegação entre jogos e séries ---------- */
+
+.navegacao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--cor-borda);
+}
+
+@media (max-width: 640px) {
+    .cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

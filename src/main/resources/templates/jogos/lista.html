@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series | Jogos</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+
+    <main class="container">
+
+        <div class="cabecalho">
+            <div>
+                <h1>Jogos cadastrados</h1>
+                <p>Gerencie sua coleção de jogos.</p>
+            </div>
+
+            <a th:href="@{/paginas/jogos/novo}" class="botao">
+                + Novo jogo
+            </a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Desenvolvedora</th>
+                    <th>Ano</th>
+                    <th>Plataforma</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr th:each="jogo : ${jogos}">
+                    <td th:text="${jogo.nome}"></td>
+                    <td th:text="${jogo.desenvolvedora}"></td>
+                    <td th:text="${jogo.anoLancamento}"></td>
+                    <td th:text="${jogo.plataforma}"></td>
+                </tr>
+
+                <tr th:if="${#lists.isEmpty(jogos)}">
+                    <td colspan="4">
+                        Nenhum jogo cadastrado até o momento.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <nav class="navegacao">
+            <a th:href="@{/paginas/series}">
+                Ver séries cadastradas
+            </a>
+        </nav>
+
+    </main>
+
+</body>
+</html>
